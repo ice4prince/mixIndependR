@@ -1,0 +1,20 @@
+Package: mixIndependR
+Type: Package
+Title: Genetics and Independence Testing of Mixed Genetic Panels
+Version: 0.3.0
+Author: Bing Song
+Maintainer: Bing Song <bingsong@my.unthsc.edu>
+Depends: R (>= 3.6.0)
+Imports: stats (>= 3.3),utils (>= 3.2.3), stringr, ggplot2
+Description: Developed to deal with multi-locus genotype data, this package is especially designed for those panel which include different type of markers. Basic genetic parameters like allele frequency, genotype frequency, heterozygosity and Hardy-Weinberg test of mixed genetic data can be obtained.     In addition, a new test for mutual independence which is compatible for mixed genetic data is developed in this package.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+NeedsCompilation: no
+Packaged: 2020-01-30 12:42:14 UTC; ice4prince
+VignetteBuilder: knitr

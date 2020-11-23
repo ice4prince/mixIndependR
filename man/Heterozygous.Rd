@@ -4,10 +4,10 @@
 \alias{Heterozygous}
 \title{Test heterozygosity at each locus}
 \usage{
-Heterozygous(x)
+Heterozygous(x,sep)
 }
 \arguments{
-\item{x}{a dataset of gentoypeswith rownames of sample ID and column names of markers.}
+\item{x}{a dataset of gentoypes with rownames of sample ID and column names of markers.}
 
 \item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|".}
 }
@@ -23,6 +23,6 @@ This function test the heterozygosity of each individuals at each locus.Output a
 \examples{
 x <- data.frame(STR1=c(12|12,13|14,13|13,14|15,15|13,13|14,14|13,12|12,14|14,15|15),
                SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
-Heterozygous(x)
+Heterozygous(x,"\\\\|")
 
 }

@@ -1,7 +1,7 @@
 #'Calculate numbers of sharing alleles each pair at each locus
 #'@details This function calculates the numbers of shared alleles between each pair of individuals for a dataset.
-#'@usage AlleleShare(g,sep,replacement=FALSE
-#'@param g a dataframe of genotype data with rownames of sample ID and column names of markers.
+#'@usage AlleleShare(df,sep,replacement=FALSE)
+#'@param df a dataframe of genotype data with rownames of sample ID and column names of markers.
 #'@param replacement a logical variable. If it is TRUE, the pairs are sampled with replacement; if FALSE (default), the pairs are sampled without replacement.
 #'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).
 #'@return a matrix of numbers of shared alleles. Each row denotes each pair; Each column denotes each locus.
@@ -9,21 +9,21 @@
 #'@examples
 #'df <- data.frame(SNP1=c("A/A","T/T","A/T","A/T","T/A","A/T","A/A","T/A","T/T","A/T"),
 #'                 STR1=c("12/12","13/14","13/13","14/15","15/13","13/14","14/13","12/12","14/14","15/15"))
-#'AlleleShare_Table(g,"/",replacement=FALSE)
+#'AlleleShare(df,"/",replacement=FALSE)
 #'
 
-AlleleShare <- function(g,sep="\\|",replacement=FALSE){
-  n <- nrow(g)
-  m <- ncol(g)
+AlleleShare <- function(df,sep="\\|",replacement=FALSE){
+  n <- nrow(df)
+  m <- ncol(df)
   if (replacement){
     d<-combn(n,2,simplify = TRUE)
-    b1 <- g[d[1,],]
-    b2 <- g[d[2,],]
+    b1 <- df[d[1,],]
+    b2 <- df[d[2,],]
   }else{
     d1<-sample(n,n/2,replace = FALSE)
     d2<-sample(setdiff(c(1:n),d1))
-    b1<-g[d1,]
-    b2<-g[d2,]
+    b1<-df[d1,]
+    b2<-df[d2,]
   }
 
   a11<-matrix(sapply(strsplit(as.matrix(b1),sep),"[",1),nrow = nrow(b1),ncol=m,byrow = F)
@@ -49,7 +49,7 @@ AlleleShare <- function(g,sep="\\|",replacement=FALSE){
   }
 
   output <-matrix(sapply(MAX, AS),nrow = nrow(b1),ncol = m)
-  colnames(output) <- colnames(g)
+  colnames(output) <- colnames(df)
   pair <-rbind(rownames(b1),rownames(b2))
   rownames(output)<-sapply(data.frame(pair),function(x){paste(x[1],x[2])})
   return(output)

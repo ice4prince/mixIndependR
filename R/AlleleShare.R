@@ -1,6 +1,6 @@
 #'Calculate numbers of sharing alleles each pair at each locus
 #'@details This function calculates the numbers of shared alleles between each pair of individuals for a dataset.
-#'@usage AlleleShare(g,sep,replacement=TRUE)
+#'@usage AlleleShare(g,sep,replacement=FALSE
 #'@param g a dataframe of genotype data with rownames of sample ID and column names of markers.
 #'@param replacement a logical variable. if it is TRUE, the pairs are sampled with replacement; if FALSE, the pairs are sampled without replacement.
 #'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"
@@ -9,10 +9,10 @@
 #'@examples
 #'df <- data.frame(SNP1=c("A/A","T/T","A/T","A/T","T/A","A/T","A/A","T/A","T/T","A/T"),
 #'                 STR1=c("12/12","13/14","13/13","14/15","15/13","13/14","14/13","12/12","14/14","15/15"))
-#'AlleleShare_Table(g,"/",replicate=TRUE)
+#'AlleleShare_Table(g,"/",replacement=FALSE)
 #'
 
-AlleleShare <- function(g,sep,replacement){
+AlleleShare <- function(g,sep,replacement=FALSE){
   n <- nrow(g)
   m <- ncol(g)
   if (replacement){

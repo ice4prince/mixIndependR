@@ -4,7 +4,7 @@
 \alias{AlleleShare}
 \title{Calculate numbers of sharing alleles each pair at each locus}
 \usage{
-AlleleShare(g,sep,replacement=TRUE)
+AlleleShare(g,sep,replacement=FALSE
 }
 \arguments{
 \item{g}{a dataframe of genotype data with rownames of sample ID and column names of markers.}
@@ -25,6 +25,6 @@ This function calculates the numbers of shared alleles between each pair of indi
 \examples{
 df <- data.frame(SNP1=c("A/A","T/T","A/T","A/T","T/A","A/T","A/A","T/A","T/T","A/T"),
                 STR1=c("12/12","13/14","13/13","14/15","15/13","13/14","14/13","12/12","14/14","15/15"))
-AlleleShare_Table(g,"/",replicate=TRUE)
+AlleleShare_Table(g,"/",replacement=FALSE)
 
 }

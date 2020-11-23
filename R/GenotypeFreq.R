@@ -5,7 +5,7 @@
 #'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).
 #'@param expect a logic variable. If expect is true, the function will calculate the expected genotype probabilities. If false, calculate the observed genotype frequencies.
 #'@references Chakraborty, R., Srinivasan, M. R., & Daiger, S. P. (1993, ISSN:0002-9297).
-#'@return a matrix of genotype frequencies. Each row denotes each genotype; each column denotes each loci. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl
+#'@return a dataframe of genotype frequencies. Each row denotes each genotype; each column denotes each loci. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl
 #'@export
 #'@examples
 #'require(mixIndependR)
@@ -27,5 +27,5 @@ GenotypeFreq <- function(x,sep="\\|",expect = TRUE){
     output <-sapply(x,function(x){sapply(Gt,counta,z=x)})
   }
   rownames(output) <- Gt
-  return(output)
+  return(as.data.frame(output))
 }

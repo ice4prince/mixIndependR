@@ -4,17 +4,17 @@
 \alias{GenotypeFreq}
 \title{Calculate Genotype Frequency###}
 \usage{
-GenotypeFreq(x,p,expect=TRUE)
+GenotypeFreq(x,sep,expect=TRUE)
 }
 \arguments{
-\item{x}{a dataset of alleles. Each row denotes each sample. One allele in one cell.In the (2r-1)th column, there is the other allele on the same locus from that in the 2r-th column; noted: no column for ID, make row.names=1 when importing.}
+\item{x}{a dataframe of genotype data with rownames of sample ID and column names of markers.}
 
-\item{p}{a matrix of allele frequencies. Each row denotes each allele; each column denotes each marker. The order of markers follows x.}
+\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).}
 
 \item{expect}{a logic variable. If expect is true, the function will calculate the expected genotype probabilities. If false, calculate the observed genotype frequencies.}
 }
 \value{
-y a matrix of genotype frequencies. Each row denotes each genotype; each column denotes each loci. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl
+a matrix of genotype frequencies. Each row denotes each genotype; each column denotes each loci. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl
 }
 \description{
 Calculate Genotype Frequency###
@@ -24,12 +24,9 @@ This function calculates the observed or expected genotype frequency from datase
 }
 \examples{
 require(mixIndependR)
-x <- data.frame(STR1=c(12,13,13,14,15,13,14,12,14,15),
-               STR1_1=c(12,14,13,15,13,14,13,12,14,15),
-               SNP1=c("A","T","A","A","T","A","A","T","T","A"),
-               SNP1_1=c("A","T","T","T","A","T","A","A","T","T"))
-p <- AlleleFreq(x)
-GenotypeFreq(x,p,expect=TRUE)
+x <- data.frame(STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"),
+                SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
+GenotypeFreq(x,"\\\\|",expect=TRUE)
 
 
 

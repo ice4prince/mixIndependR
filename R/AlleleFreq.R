@@ -2,7 +2,7 @@
 #'@details This function calculates the allele frequencies of one dataset.
 #'@usage AlleleFreq(x,sep)
 #'@param x a dataset of genotypes. Each row denotes each individual; each column contain each marker.
-#'@param sep the allele separator in the imported genotype data.Note: when using the special character like "|", remember to protect it as "\\|".
+#'@param sep the allele separator in the imported genotype data.Note: when using the special character like "|", remember to protect it as "\\|"(default).
 #'@return a matrix of allele frequencies. Each row denotes each allele; each column denotes each marker. The order of makers follows x.
 #'@export
 #'@examples
@@ -11,7 +11,7 @@
 #'AlleleFreq(x,"\\|")
 #'
 
-AlleleFreq <- function(x,sep){
+AlleleFreq <- function(x,sep="\\|"){
   a0 <-split_Genotype(x,sep,"*",byrow = T)
   l <- as.data.frame(table(as.matrix(a0)))   #####All allleles included####
   c1 <- function(y,z){

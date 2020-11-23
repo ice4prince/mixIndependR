@@ -9,7 +9,7 @@ Heterozygous(x,sep)
 \arguments{
 \item{x}{a dataset of gentoypes with rownames of sample ID and column names of markers.}
 
-\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|".}
+\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).}
 }
 \value{
 a dataframe of heterozygosity.0 is homozygous;1 is heterozygous. Each row denotes each individual; Each column denotes each locus.

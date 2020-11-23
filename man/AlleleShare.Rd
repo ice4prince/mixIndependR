@@ -9,9 +9,9 @@ AlleleShare(g,sep,replacement=FALSE
 \arguments{
 \item{g}{a dataframe of genotype data with rownames of sample ID and column names of markers.}
 
-\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"}
+\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).}
 
-\item{replacement}{a logical variable. if it is TRUE, the pairs are sampled with replacement; if FALSE, the pairs are sampled without replacement.}
+\item{replacement}{a logical variable. If it is TRUE, the pairs are sampled with replacement; if FALSE (default), the pairs are sampled without replacement.}
 }
 \value{
 a matrix of numbers of shared alleles. Each row denotes each pair; Each column denotes each locus.

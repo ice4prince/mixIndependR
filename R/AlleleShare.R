@@ -2,8 +2,8 @@
 #'@details This function calculates the numbers of shared alleles between each pair of individuals for a dataset.
 #'@usage AlleleShare(g,sep,replacement=FALSE
 #'@param g a dataframe of genotype data with rownames of sample ID and column names of markers.
-#'@param replacement a logical variable. if it is TRUE, the pairs are sampled with replacement; if FALSE, the pairs are sampled without replacement.
-#'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"
+#'@param replacement a logical variable. If it is TRUE, the pairs are sampled with replacement; if FALSE (default), the pairs are sampled without replacement.
+#'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).
 #'@return a matrix of numbers of shared alleles. Each row denotes each pair; Each column denotes each locus.
 #'@export
 #'@examples
@@ -12,7 +12,7 @@
 #'AlleleShare_Table(g,"/",replacement=FALSE)
 #'
 
-AlleleShare <- function(g,sep,replacement=FALSE){
+AlleleShare <- function(g,sep="\\|",replacement=FALSE){
   n <- nrow(g)
   m <- ncol(g)
   if (replacement){

@@ -2,7 +2,7 @@
 #'@details This function test the heterozygosity of each individuals at each locus.Output a table and Usually followed by write.csv(as.data.frame(y),file = "~/*.csv") to export the results.
 #'@usage Heterozygous(x,sep)
 #'@param x a dataset of gentoypes with rownames of sample ID and column names of markers.
-#'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|".
+#'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).
 #'@return a dataframe of heterozygosity.0 is homozygous;1 is heterozygous. Each row denotes each individual; Each column denotes each locus.
 #'@export
 #'@examples
@@ -10,7 +10,7 @@
 #'                SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
 #'Heterozygous(x,"\\|")
 #'
-Heterozygous <- function(x,sep){
+Heterozygous <- function(x,sep="\\|"){
   g2 <- as.matrix(x)
   n <- nrow(g2)
   m <- ncol(g2)

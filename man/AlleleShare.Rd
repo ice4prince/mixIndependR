@@ -14,7 +14,7 @@ AlleleShare(df,sep,replacement=FALSE)
 \item{replacement}{a logical variable. If it is TRUE, the pairs are sampled with replacement; if FALSE (default), the pairs are sampled without replacement.}
 }
 \value{
-a matrix of numbers of shared alleles. Each row denotes each pair; Each column denotes each locus.
+a dataframe of numbers of shared alleles. Each row denotes each pair; Each column denotes each locus.
 }
 \description{
 Calculate numbers of sharing alleles each pair at each locus
@@ -25,6 +25,6 @@ This function calculates the numbers of shared alleles between each pair of indi
 \examples{
 df <- data.frame(SNP1=c("A/A","T/T","A/T","A/T","T/A","A/T","A/A","T/A","T/T","A/T"),
                 STR1=c("12/12","13/14","13/13","14/15","15/13","13/14","14/13","12/12","14/14","15/15"))
-AlleleShare_Table(df,"/",replacement=FALSE)
+AlleleShare(df,"/",replacement=FALSE)
 
 }

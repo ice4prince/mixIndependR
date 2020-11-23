@@ -8,15 +8,8 @@
 #'AS<-matrix(sample(c(0:2),20,replace=TRUE,prob=c(0.3,0.3,0.4)),nrow=5)
 #'RealProAlleleShare(AS)
 RealProAlleleShare <-function(AS){
-  l <-nrow(AS)
-  n <-ncol(AS)
-  Pro_real <- mat.or.vec(n,3)
-  for (i in 1:n){
-    Pro_real[i,1]<-counta(AS[,i],0)
-    Pro_real[i,2]<-counta(AS[,i],1)
-    Pro_real[i,3]<-counta(AS[,i],2)
-  }
-  row.names(Pro_real) <- colnames(AS)
-  colnames(Pro_real) <- c("P0","P1","P2")
-  return(Pro_real/l)
+  pr<-t(rbind(sapply(AS,counta,y=0),sapply(AS,counta,y=1),sapply(AS,counta,y=2)))
+  output <-pr/rowSums(pr)
+  colnames(output) <- c("P0","P1","P2")
+  return(output)
 }

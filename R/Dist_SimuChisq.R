@@ -22,10 +22,6 @@ Dist_SimuChisq <- function(s,prob,b){
     prob <- prob[-idx]
     s <- s[,-idx]
   }
-  t <- nrow(s) ####times of sampling.######
-  MyChisqValues <- replicate(t,0)
-  for (k in 1:t){
-    MyChisqValues[k] <- chisq.test(s[k,],p=prob,simulate.p.value = T,B=b)$statistic
-  }
-  return(MyChisqValues)
+  MyChisqValues<-sapply(as.data.frame(t(s)), function(df){return(chisq.test(df,p=prob,simulate.p.value = T,B=b)$statistic)})
+  return(as.vector(MyChisqValues))
 }

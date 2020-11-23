@@ -24,7 +24,7 @@ GenotypeFreq <- function(x,sep="\\|",expect = TRUE){
     he<-sapply(data.frame(p),function(x){combn(x,2)[1,]*combn(x,2)[2,]})
     output <-rbind(ho,he)
   }else{
-    output <-sapply(x0,function(x){sapply(Gt,counta,z=x)})
+    output <-sapply(x,function(x){sapply(Gt,counta,z=x)})
   }
   rownames(output) <- Gt
   return(output)

@@ -14,7 +14,7 @@ Simulate_DistX(e,m,t)
 \item{t}{the number of samples you want to build/ the times to generate a sample}
 }
 \value{
-y a matrix of frequencies of No. of shared alleles. Each row denotes each simulated sample; Each column denotes each No. of shared alleles, from 0 to 2e length of e.
+a matrix of frequencies of No. of shared alleles. Each row denotes each simulated sample; Each column denotes each No. of shared alleles, from 0 to 2e length of e.
 }
 \description{
 Build a simulated distribution for No. of Shared Alleles

@@ -11,11 +11,8 @@
 FreqAlleleShare<- function(AS){
   n<-ncol(AS)
   X<-rowSums(AS)
-  Frequency <- rep.int(0,(2*n+1))
-  for (i in 1:(2*n+1)){
-    Frequency[i] <- counta(X,(i-1))
-  }
   X_io <- c(0:(2*n))
-  df <- data.frame(X_io,Frequency)
+  Freq<-sapply(X_io,counta,z=X)
+  df <- data.frame(X_io,Freq)
   return(df)
 }

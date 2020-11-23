@@ -11,11 +11,8 @@
 FreqHetero<- function(h){
   n<-ncol(h)
   K<-rowSums(h)
-  Frequency <- rep.int(0,(n+1))
-  for (i in 1:(n+1)){
-    Frequency[i] <- counta(K,(i-1))
-  }
   K_io <- c(0:n)
-  df <- data.frame(K_io,Frequency)
+  Freq<-sapply(K_io,counta,z=K)
+  df <- data.frame(K_io,Freq)
   return(df)
 }

@@ -11,7 +11,7 @@
 #'@examples
 #'x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
 #'                 STR1=c("12|12","13|14","13|13","14|15"))
-#'mixIndependX(x,"\\|",10,10)
+#'mixIndependX(x,sep="\\|",10,10)
 
 mixIndependX <- function(x,sep="\\|",t,B){
   ss <- nrow(x)/2

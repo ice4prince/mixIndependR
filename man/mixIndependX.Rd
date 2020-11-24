@@ -27,5 +27,5 @@ This function is a summary of pipeline for number of shared alleles(X), and gene
 \examples{
 x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
                 STR1=c("12|12","13|14","13|13","14|15"))
-mixIndependX(x,"\\\\|",10,10)
+mixIndependX(x,sep="\\\\|",10,10)
 }

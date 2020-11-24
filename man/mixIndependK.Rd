@@ -27,5 +27,5 @@ This function is a summary of pipeline for number of heterozygous loci (K), and 
 \examples{
 x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
                 STR1=c("12|12","13|14","13|13","14|15"))
-mixIndependK(x,10,10)
+mixIndependK(x,sep ="\\\\|",10,10)
 }

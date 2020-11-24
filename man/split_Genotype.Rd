@@ -9,7 +9,7 @@ split_Genotype(data,sep=":",dif="*",byrow=TRUE)
 \arguments{
 \item{df}{a dataframe of genotype data with rownames of sample ID and column names of markers.}
 
-\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"}
+\item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).}
 
 \item{dif}{a symbol differentiate the one marker on each allele.}
 

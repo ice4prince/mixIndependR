@@ -4,12 +4,12 @@
 \alias{HWE.Chisq}
 \title{Test the Hardy Weinberg Equilibrium with Chi-square test####}
 \usage{
-HWE.Chisq(x,x0,rescale.p=FALSE,simulate.p.value=TRUE,B=2000)
+HWE.Chisq(G,G0,rescale.p=FALSE,simulate.p.value=TRUE,B=2000)
 }
 \arguments{
-\item{x}{a dataframe of observed genotype frequencies. Each row denotes each genotype; each column denotes each marker. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl}
+\item{G}{a dataframe of observed genotype frequencies. Each row denotes each genotype; each column denotes each marker. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl}
 
-\item{x0}{a dataframe of expected genotype probabilities;each row denotes each genotype; each column denotes each loci. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl}
+\item{G0}{a dataframe of expected genotype probabilities;each row denotes each genotype; each column denotes each loci. The order of markers follows x; the genotypes are ordered by: from 1:l-th column, the genotypes are homozygous in order as : p1p1, p2p2,p3p3,...,plpl;from ll-th to u-th column, the genotypes are heterozygous in order as:choose(l,2) like: p1p2,p1p3,...,p1pl,p2p3,p2p4,...p2pl,...p(l-1)pl}
 
 \item{rescale.p}{a logical scalar; if TRUE then p is rescaled (if necessary) to sum to 1. If rescale.p is FALSE, and p does not sum to 1, an error is given.}
 

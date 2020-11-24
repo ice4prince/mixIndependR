@@ -21,14 +21,12 @@ library(mixIndependR)
 ```
 
 ```{r preparation, include=FALSE}
-x <- data.frame(STR1=c(12,13,13,14,15,13,14,12,14,15),
-                STR1_1=c(12,14,13,15,13,14,13,12,14,15),
-                SNP1=c("A","T","A","A","T","A","A","T","T","A"),
-                SNP1_1=c("A","T","T","T","A","T","A","A","T","T"))
+x <- data.frame(STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"),SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
+
 p <- AlleleFreq(x)
 h <-Heterozygous(x)
 H <- RxpHetero(h,p,HWE=FALSE)
-AS<-AlleleShare_Table(x,replicate=TRUE)
+AS<-AlleleShare(x,replacement=FALSE)
 e <-RealProAlleleShare(AS)
 ObsDist_K<-FreqHetero(h)
 ExpDist_K<- DistHetero(H)

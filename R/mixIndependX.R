@@ -1,6 +1,6 @@
 #'Quick pvalue of total number of shared alleles
 #'@details This function is a summary of pipeline for number of shared alleles(X), and generates the p-value of K for the target dataset.
-#'@usage mixIndependX(x,sep="\\|",t,B)
+#'@usage mixIndependX(x,sep,t,B)
 #'@importFrom stats ecdf
 #'@param x a dataset of alleles. Each row denotes each individual.One allele in one cell.In the (2r-1)th column, there is the same locus with the 2r-th column; noted: no column for ID, make row.names=1 when importing.
 #'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|".

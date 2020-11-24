@@ -4,7 +4,7 @@
 \alias{Heterozygous}
 \title{Test heterozygosity at each locus}
 \usage{
-Heterozygous(x,sep="\\|")
+Heterozygous(x,sep)
 }
 \arguments{
 \item{x}{a dataset of gentoypes with rownames of sample ID and column names of markers.}

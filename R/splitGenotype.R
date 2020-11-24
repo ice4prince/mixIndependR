@@ -1,6 +1,6 @@
 #'Split Genotype Table to Duo-Allele Table
 #'@description Split each column to two columns for a table of genotypes
-#'@usage splitGenotype(df,sep="\\|",dif="*",rowbind=TRUE)
+#'@usage splitGenotype(df,sep,dif="*",rowbind=TRUE)
 #'@param df a dataframe of genotype data with rownames of sample ID and column names of markers.
 #'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).
 #'@param dif a symbol differentiate the one marker on each allele.
@@ -11,8 +11,9 @@
 #'\dontrun{
 #'df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
 #'                 STR1=c("12|12","13|14","13|13","14|15"))
-#'splitGenotype(df,sep="\\|",dif="*",rowbind=TRUE)
+#'splitGenotype(df)
 #'}
+
 
 splitGenotype <- function(df,sep="\\|",dif="*",rowbind = TRUE){
   g0 <- as.matrix(df)

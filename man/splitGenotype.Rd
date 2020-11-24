@@ -4,7 +4,7 @@
 \alias{splitGenotype}
 \title{Split Genotype Table to Duo-Allele Table}
 \usage{
-splitGenotype(df,sep="\\|",dif="*",rowbind=TRUE)
+splitGenotype(df,sep,dif="*",rowbind=TRUE)
 }
 \arguments{
 \item{df}{a dataframe of genotype data with rownames of sample ID and column names of markers.}
@@ -28,6 +28,6 @@ The function convert a genotype data to allele data with double columns or with 
 \dontrun{
 df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
                 STR1=c("12|12","13|14","13|13","14|15"))
-splitGenotype(df,sep="\\\\|",dif="*",rowbind=TRUE)
+splitGenotype(df)
 }
 }

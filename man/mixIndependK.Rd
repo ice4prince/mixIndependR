@@ -4,7 +4,7 @@
 \alias{mixIndependK}
 \title{Quick pvalue of total number of heterozygous loci}
 \usage{
-mixIndependK(x,sep="\\|",t,B)
+mixIndependK(x,sep,t,B)
 }
 \arguments{
 \item{x}{a dataset of alleles. Each row denotes each individual.One allele in one cell.In the (2r-1)th column, there is the same locus with the 2r-th column; noted: no column for ID, make row.names=1 when importing.}

@@ -1,6 +1,6 @@
 #'Quick pvalue of total number of heterozygous loci
 #'@details This function is a summary of pipeline for number of heterozygous loci (K), and generates the p-value of K for the target dataset.
-#'@usage mixIndependK(x,sep="\\|",t,B)
+#'@usage mixIndependK(x,sep,t,B)
 #'@param x a dataset of alleles. Each row denotes each individual.One allele in one cell.In the (2r-1)th column, there is the same locus with the 2r-th column; noted: no column for ID, make row.names=1 when importing.
 #'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|".
 #'@param t times of simulation in "Simulate_DistK" and "Simulate_DistX".

@@ -1,10 +1,10 @@
 ## Test environments
 
-* x86_64-w64-mingw32 (64-bit), R 3.6.3
-* x86_64-apple-darwin15.6.0 (64-bit)
+* x86_64-w64-mingw32 (64-bit), R 4.0.3
+* x86_64-apple-darwin17.0 (64-bit), R 4.0.3
+* x86_64-w64-mingw32 (64-bit), R Under development (unstable) (2020-11-21 r79454)
 
-* Rhub: Platform:	Fedora Linux, R-devel, clang, gfortran
-        Platform: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+* Rhub: Platform: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
 
 
 ## R CMD check results

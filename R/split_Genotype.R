@@ -9,9 +9,9 @@
 #'@details The function convert a genotype data to allele data with double columns or with double rows; the rownames are sample ID in the same order but twice if the rows are doubled, and the column names are in the same order or in the order of alphabet by pairs if columns are doubled. \cr The paremater "sep" is the symbol of allele separator in the imported genotype data. \cr The parameter "dif" is the difference between the second and the first apprearance for the same marker. For example, if "dif = _1", the column names of output will be "marker1" "marker1 _1","marker2","marker2 _1", if the original list of column names is "marker1","marker2".
 #'@return a dataframe with doubled columns of import data and alleles in different columns
 #'@examples
-#'df <- data.frame(SNP1=c("A/A","T/T","A/T","A/T","T/A","A/T","A/A","T/A","T/T","A/T"),
-#'                 STR1=c("12/12","13/14","13/13","14/15","15/13","13/14","14/13","12/12","14/14","15/15"))
-#'split_Genotype(df,sep="/",dif="*",byrow=TRUE)
+#'df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+#'                 STR1=c("12|12","13|14","13|13","14|15"))
+#'split_Genotype(df,sep="\\|",dif="*",byrow=TRUE)
 
 split_Genotype <- function(df,sep="\\|",dif="*",byrow=TRUE){
   g0 <- as.matrix(df)

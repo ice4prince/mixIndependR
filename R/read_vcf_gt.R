@@ -1,6 +1,6 @@
 #'Import genotype data from vcf files/
 #'@details This function extract the genotypes and allele status from a vcf file.
-#'@importFrom data.table fread utils read.table
+#'@import data.table utils
 #'@usage read_vcf_gt(x)
 #'@param x The vcf file with its directory
 #'@return a list contains the genotype and allele status.

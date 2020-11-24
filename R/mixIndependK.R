@@ -3,30 +3,27 @@
 #'@usage mixIndependK(x,t,B)
 #'@importFrom stats ecdf
 #'@param x a dataset of alleles. Each row denotes each individual.One allele in one cell.In the (2r-1)th column, there is the same locus with the 2r-th column; noted: no column for ID, make row.names=1 when importing.
+#'@param sep allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|".
 #'@param t times of simulation in "Simulate_DistK" and "Simulate_DistX".
 #'@param B times of bootstrapping in Chi Squares Test.
 #'@return pvalue (1-cumulative probabilities) for the number of heterozygous loci(K)
 #'@export
 #'@examples
-#'x0 <- data.frame(STR1=c(12,13,13,14,15,13,14,12,14,15),
-#'                 STR1_1=c(12,14,13,15,13,14,13,12,14,15),
-#'                 SNP1=c("A","T","A","A","T","A","A","T","T","A"),
-#'                 SNP1_1=c("A","T","T","T","A","T","A","A","T","T"),
-#'                 STR2=c(10,12,11,9,10,12,11,12,12,10),
-#'                 STR2_1=c(10,9,11,11,10,12,10,10,12,9),
-#'                 SNP2=c("C","C","G","G","G","G","C","G","G","C"),
-#'                 SNP2_1=c("C","C","G","G","C","G","C","C","G","G"))
+#'df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"),
+#'                 STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"))
 #'mixIndependK(x0,10,10)
 
-mixIndependK<-function(x,t,B){
-  s <- nrow(x)
-  p <- AlleleFreq(x)
-  h <- Heterozygous(x)
+mixIndependK<-function(x,sep="\\|",t,B){
+  ss <- nrow(x)
+  p <- AlleleFreq(x,sep)
+  h <- Heterozygous(x,sep)
   H <- RxpHetero(h,p,HWE = F)
   Obs_DistHetero<-FreqHetero(h)
   Exp_DistHetero<-DistHetero(H)
   prob<-Exp_DistHetero$Density
-  obs<-Obs_DistHetero$Frequency
+  obs<-Obs_DistHetero$Freq
+  s<-Simulate_DistK(H,ss,t)
+  x2<-Dist_SimuChisq(s,Exp_DistHetero$Density,B)
   idx <-which(prob==0)
   if (length(idx)==0){
     prob <- prob
@@ -36,8 +33,6 @@ mixIndependK<-function(x,t,B){
     obs <- obs[-idx]
   }
   x20 <-chisq.test(obs,p=prob,simulate.p.value = T,B=B)
-  s<-Simulate_DistK(H,s,t)
-  x2<-Dist_SimuChisq(s,Exp_DistHetero$Density,B)
   P <- ecdf(x2)
   return(1-P(x20$statistic))
 }

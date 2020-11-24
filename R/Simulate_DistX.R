@@ -19,6 +19,7 @@ Simulate_DistX <- function(e,m,t){
     return(sapply(c(0:s), counta,z=rowSums(OneSample)))
   }
   output<-t(replicate(t,OneDist(e,m)))
+  s<-2*nrow(e)
   colnames(output) <- c(0:s)
   return(output)
 }

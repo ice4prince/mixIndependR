@@ -21,7 +21,7 @@ Test heterozygosity at each locus
 This function test the heterozygosity of each individuals at each locus.Output a table and Usually followed by write.csv(as.data.frame(y),file = "~/*.csv") to export the results.
 }
 \examples{
-x <- data.frame(STR1=c(12|12,13|14,13|13,14|15,15|13,13|14,14|13,12|12,14|14,15|15),
+x <- data.frame(STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"),
                SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
 Heterozygous(x,"\\\\|")
 

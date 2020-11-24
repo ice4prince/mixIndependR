@@ -24,12 +24,9 @@ This function calculates the observed or expected genotype frequency from datase
 }
 \examples{
 require(mixIndependR)
-x <- data.frame(STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"),
-                SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
+df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+                STR1=c("12|12","13|14","13|13","14|15"))
 GenotypeFreq(x,"\\\\|",expect=TRUE)
-
-
-
 }
 \references{
 Chakraborty, R., Srinivasan, M. R., & Daiger, S. P. (1993, ISSN:0002-9297).

@@ -21,8 +21,8 @@ Calculate Allele Frequency
 This function calculates the allele frequencies of one dataset.
 }
 \examples{
-x <- data.frame(STR1=c("12|12",“13|14”,“13|13”,“14|15”,“15|13”,“13|14”,“14|13”,“12|12”,“14|14”,“15|15”),
-               SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
+x <- data.frame(STR1=c("12|12","13|14","13|13","14|15"),
+               SNP1=c("A|A","T|T","A|T","A|T"))
 AlleleFreq(x,"\\\\|")
 
 }

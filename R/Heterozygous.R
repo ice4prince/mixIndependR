@@ -6,7 +6,7 @@
 #'@return a dataframe of heterozygosity.0 is homozygous;1 is heterozygous. Each row denotes each individual; Each column denotes each locus.
 #'@export
 #'@examples
-#'x <- data.frame(STR1=c(12|12,13|14,13|13,14|15,15|13,13|14,14|13,12|12,14|14,15|15),
+#'x <- data.frame(STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"),
 #'                SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
 #'Heterozygous(x,"\\|")
 #'

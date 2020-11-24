@@ -4,7 +4,7 @@
 \alias{mixIndependX}
 \title{Quick pvalue of total number of shared alleles}
 \usage{
-mixIndependX(x,t,B)
+mixIndependX(x,sep="\\|",t,B)
 }
 \arguments{
 \item{x}{a dataset of alleles. Each row denotes each individual.One allele in one cell.In the (2r-1)th column, there is the same locus with the 2r-th column; noted: no column for ID, make row.names=1 when importing.}
@@ -25,7 +25,7 @@ Quick pvalue of total number of shared alleles
 This function is a summary of pipeline for number of shared alleles(X), and generates the p-value of K for the target dataset.
 }
 \examples{
-df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"),
-                STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"))
+df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+                STR1=c("12|12","13|14","13|13","14|15"))
 mixIndependX(x0,"\\\\|",10,10)
 }

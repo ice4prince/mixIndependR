@@ -23,8 +23,8 @@ Calculate numbers of sharing alleles each pair at each locus
 This function calculates the numbers of shared alleles between each pair of individuals for a dataset.
 }
 \examples{
-df <- data.frame(SNP1=c("A/A","T/T","A/T","A/T","T/A","A/T","A/A","T/A","T/T","A/T"),
-                STR1=c("12/12","13/14","13/13","14/15","15/13","13/14","14/13","12/12","14/14","15/15"))
-AlleleShare(df,"/",replacement=FALSE)
+df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+                STR1=c("12|12","13|14","13|13","14|15"))
+AlleleShare(df,"\\\\|",replacement=FALSE)
 
 }

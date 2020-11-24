@@ -4,7 +4,7 @@
 \alias{split_Genotype}
 \title{Split Genotype Table to Duo-Allele Table}
 \usage{
-split_Genotype(data,sep=":",dif="*",byrow=TRUE)
+split_Genotype(df,sep="\\|",dif="*",byrow=TRUE)
 }
 \arguments{
 \item{df}{a dataframe of genotype data with rownames of sample ID and column names of markers.}

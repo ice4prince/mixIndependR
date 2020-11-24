@@ -18,7 +18,7 @@ HWE.Chisq(G,G0,rescale.p=FALSE,simulate.p.value=TRUE,B=2000)
 \item{B}{an integer specifying the number of replicates used in the Monte Carlo test.}
 }
 \value{
-a vector of result of p-values for chi-square teste; the orders of markers follows x.
+a vector of result of p-values for chi-square test; the orders of markers follows x.
 }
 \description{
 Test the Hardy Weinberg Equilibrium with Chi-square test####

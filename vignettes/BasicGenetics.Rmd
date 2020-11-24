@@ -11,7 +11,7 @@ This vignette will introduce you to how the basic genetic parameters like the al
 
 ## Data Import
 
-The dataset imported should be in a format of the genotype data with individuals in rows and markers in columns. Excel, cvs and vcf file format are compatible.
+The dataset imported should be in a format of the genotype data with individuals in rows and markers in columns. Excel, csv and vcf file format are compatible.
 
 
 ```{r, include = FALSE}

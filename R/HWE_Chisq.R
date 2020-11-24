@@ -7,7 +7,7 @@
 #'@param rescale.p a logical scalar; if TRUE then p is rescaled (if necessary) to sum to 1. If rescale.p is FALSE, and p does not sum to 1, an error is given.
 #'@param simulate.p.value a logical indicating whether to compute p-values by Monte Carlo simulation.
 #'@param B an integer specifying the number of replicates used in the Monte Carlo test.
-#'@return a vector of result of p-values for chi-square teste; the orders of markers follows x.
+#'@return a vector of result of p-values for chi-square test; the orders of markers follows x.
 #'@export
 #'@examples
 #'require(mixIndependR)

@@ -6,6 +6,7 @@
 #'@return a matrix of allele frequencies. Each row denotes each allele; each column denotes each marker. The order of makers follows x.
 #'@export
 #'@examples
+#'require(mixIndependR)
 #'x <- data.frame(STR1=c("12|12","13|14","13|13","14|15"),
 #'                SNP1=c("A|A","T|T","A|T","A|T"))
 #'AlleleFreq(x,"\\|")

@@ -7,7 +7,7 @@
 Heterozygous(x,sep)
 }
 \arguments{
-\item{x}{a dataset of gentoypes with rownames of sample ID and column names of markers.}
+\item{x}{a dataset of genotypes with rownames of sample ID and column names of markers.}
 
 \item{sep}{allele separator in the imported genotype data. Note: when using the special character like "|", remember to protect it as "\\|"(default).}
 }

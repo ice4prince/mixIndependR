@@ -30,7 +30,7 @@ install.packages("mixIndependR")
 
 ## Example
 
-The dataset imported can be gonotype data with sample ID in each row and the marker name in each column.Excel, cvs, and vcf files are compatible.
+The dataset imported can be genotype data with sample ID in each row and the marker name in each column.Excel, csv, and vcf files are compatible.
 
 ```{r example}
 library(mixIndependR)

@@ -1,3 +1,12 @@
+# mixIndependR 0.4.0 -2020.11.24
+# Function Optimizing
+- Optimize most functions and replace loops with parallel calculation.
+# New Functions
+- Add function "read_vcf_gt" and "split_Genotype", and make data importing compatible with excel, cvs and vcf format for genotype.
+- remove the function "HWE.Fisher" for the moment
+# Vignette
+- Not update for the new version yet.
+
 # mixIndependR 0.3.0 -2020.10.05
 # New Functions
 - add two functions "mixIndependK" and "mixIndependX"

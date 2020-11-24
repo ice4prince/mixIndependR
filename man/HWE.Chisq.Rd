@@ -28,9 +28,11 @@ This function check the Hardy Weinberg Equilibrium from observed and expected di
 }
 \examples{
 require(mixIndependR)
-x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
-                STR1=c("12|12","13|14","13|13","14|15"))
-G <-GenotypeFreq(x,expect = F)
-G0 <-GenotypeFreq(x)
+x <- data.frame(STR1=c("11|12","12|13","11|13","13|15"),
+               STR2=c("12|12","13|14","13|13","14|15"),
+               SNP1=c("A|T","A|A","T|A","A|T"),
+               SNP2=c("A|A","T|T","A|T","T|A"))
+G <- GenotypeFreq(x,expect = FALSE)
+G0 <- GenotypeFreq(x,expect = TRUE)
 HWE.Chisq(G,G0,rescale.p=FALSE,simulate.p.value=TRUE,B=2000)
 }

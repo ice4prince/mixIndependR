@@ -8,9 +8,9 @@
 #'@return pvalue (1-cumulative probabilities) for the number of heterozygous loci(K)
 #'@export
 #'@examples
-#'df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+#'x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
 #'                 STR1=c("12|12","13|14","13|13","14|15"))
-#'mixIndependK(x0,10,10)
+#'mixIndependK(x,10,10)
 
 mixIndependK<-function(x,sep="\\|",t,B){
   ss <- nrow(x)

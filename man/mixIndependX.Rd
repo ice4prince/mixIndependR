@@ -25,7 +25,7 @@ Quick pvalue of total number of shared alleles
 This function is a summary of pipeline for number of shared alleles(X), and generates the p-value of K for the target dataset.
 }
 \examples{
-df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
                 STR1=c("12|12","13|14","13|13","14|15"))
-mixIndependX(x0,"\\\\|",10,10)
+mixIndependX(x,"\\\\|",10,10)
 }

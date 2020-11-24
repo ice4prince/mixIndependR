@@ -23,9 +23,7 @@ GenotypeFreq <- function(x,sep="\\|",expect = TRUE){
     ho<-p*p
     p0<-data.frame(p)
     he<-sapply(p0,function(x){combn(x,2)[1,]*combn(x,2)[2,]})
-    p0$index <- as.numeric(rownames(p))
-    p_hat<-p0[order(-p0$index),]
-    p_hat$index <- NULL
+    p_hat<-p0[sort(rownames(p),decreasing = T),]
     he_verse <- sapply(p_hat,function(x){combn(x,2)[1,]*combn(x,2)[2,]})
     output <-rbind(ho,he,he_verse)
   }else{

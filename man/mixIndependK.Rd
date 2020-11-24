@@ -25,7 +25,7 @@ Quick pvalue of total number of heterozygous loci
 This function is a summary of pipeline for number of heterozygous loci (K), and generates the p-value of K for the target dataset.
 }
 \examples{
-df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
+x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
                 STR1=c("12|12","13|14","13|13","14|15"))
-mixIndependK(x0,10,10)
+mixIndependK(x,10,10)
 }

@@ -11,16 +11,18 @@
 #'@export
 #'@examples
 #'require(mixIndependR)
-#'x <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
-#'                 STR1=c("12|12","13|14","13|13","14|15"))
-#'G <-GenotypeFreq(x,expect = F)
-#'G0 <-GenotypeFreq(x)
+#'x <- data.frame(STR1=c("11|12","12|13","11|13","13|15"),
+#'                STR2=c("12|12","13|14","13|13","14|15"),
+#'                SNP1=c("A|T","A|A","T|A","A|T"),
+#'                SNP2=c("A|A","T|T","A|T","T|A"))
+#'G <- GenotypeFreq(x,expect = FALSE)
+#'G0 <- GenotypeFreq(x,expect = TRUE)
 #'HWE.Chisq(G,G0,rescale.p=FALSE,simulate.p.value=TRUE,B=2000)
 
 HWE.Chisq <- function(G,G0,rescale.p=FALSE,simulate.p.value=TRUE,B=2000){
   Chi_value <-function(x,x0,simulate.p.value=TRUE,B=2000,rescale.p=FALSE){
-    cr<-which(!x==0)
-    output <- chisq.test(x[cr],x0[cr]*sum(x[cr]),simulate.p.value = simulate.p.value,B=B,rescale.p = rescale.p)
+    cr<-which(!x0==0)
+    output <- chisq.test(x[cr],p=x0[cr],simulate.p.value = simulate.p.value,B=B,rescale.p = rescale.p)
     return(output$p.value)
   }
   return(mapply(Chi_value,G,G0,simulate.p.value=simulate.p.value,B=B,rescale.p=rescale.p))

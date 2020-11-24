@@ -19,5 +19,7 @@ Import genotype data from vcf files/
 This function extract the genotypes and allele status from a vcf file.
 }
 \examples{
+\dontrun{
 df<-read_vcf_gt("~/x.vcf")
+}
 }

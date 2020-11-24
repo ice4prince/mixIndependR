@@ -32,7 +32,7 @@ AlleleShare <- function(df,sep="\\|",replacement=FALSE){
   a21<-matrix(sapply(strsplit(as.matrix(b2),sep),"[",1),nrow = nrow(b2),ncol=m,byrow = F)
   a22<-matrix(sapply(strsplit(as.matrix(b2),sep),"[",2),nrow = nrow(b2),ncol=m,byrow = F)
 
-  MAX <- data.frame(t(data.frame(a11 =as.numeric(a11),a12=as.numeric(a12),a21=as.numeric(a21),a22=as.numeric(a22))))
+  MAX <- data.frame(t(data.frame(a11 =as.vector(a11),a12=as.vector(a12),a21=as.vector(a21),a22=as.vector(a22))))
 
   AS <- function(x){
     a11 <- x[1]

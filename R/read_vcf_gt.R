@@ -5,7 +5,9 @@
 #'@param x The vcf file with its directory
 #'@return a list contains the genotype and allele status.
 #'@examples
+#'\dontrun{
 #'df<-read_vcf_gt("~/x.vcf")
+#'}
 
 read_vcf_gt <- function(x){
   vcf <- fread(x)

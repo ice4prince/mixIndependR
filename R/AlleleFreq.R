@@ -12,7 +12,7 @@
 #'
 
 AlleleFreq <- function(x,sep="\\|"){
-  a0 <-split_Genotype(x,sep,"*",rowbind =  T)
+  a0 <-splitGenotype(x,sep,"*",rowbind =  T)
   l <- as.data.frame(table(as.matrix(a0)))   #####All allleles included####
   c1 <- function(y,z){
     f<- sapply(y,counta,z=z)

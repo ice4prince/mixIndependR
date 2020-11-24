@@ -2,7 +2,7 @@
 # Function Optimizing
 - Optimize most functions and replace loops with parallel calculation.
 # New Functions
-- Add function "read_vcf_gt" and "split_Genotype", and make data importing compatible with excel, cvs and vcf format for genotype.
+- Add function "read_vcf_gt" and "splitGenotype", and make data importing compatible with excel, cvs and vcf format for genotype.
 - Remove the function "HWE.Fisher" for the moment
 # Vignette
 - Update for the new version.

@@ -4,7 +4,7 @@
 \alias{split_Genotype}
 \title{Split Genotype Table to Duo-Allele Table}
 \usage{
-split_Genotype(df,sep="\\|",dif="*",byrow=TRUE)
+split_Genotype(df,sep="\\|",dif="*",rowbind=TRUE)
 }
 \arguments{
 \item{df}{a dataframe of genotype data with rownames of sample ID and column names of markers.}
@@ -13,7 +13,7 @@ split_Genotype(df,sep="\\|",dif="*",byrow=TRUE)
 
 \item{dif}{a symbol differentiate the one marker on each allele.}
 
-\item{byrow}{a logical variable. If byrow is TRUE, the output is arranged with double rows but the same columns, and the table of the second allele is followed after the first allele table by rows with double individual IDs in the same order.\cr If byrow is false,the output is arranged by double columns and the same rows; the column names are in the order of alphabet by pairs.}
+\item{rowbind}{a logical variable. If byrow is TRUE, the output is arranged with double rows but the same columns, and the table of the second allele is followed after the first allele table by rows with double individual IDs in the same order.\cr If byrow is false,the output is arranged by double columns and the same rows; the column names are in the order of alphabet by pairs.}
 }
 \value{
 a dataframe with doubled columns of import data and alleles in different columns
@@ -27,5 +27,5 @@ The function convert a genotype data to allele data with double columns or with 
 \examples{
 df <- data.frame(SNP1=c("A|A","T|T","A|T","A|T"),
                 STR1=c("12|12","13|14","13|13","14|15"))
-split_Genotype(df,sep="\\\\|",dif="*",byrow=TRUE)
+split_Genotype(df,sep="\\\\|",dif="*",rowbind=TRUE)
 }

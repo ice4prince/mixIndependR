@@ -1,3 +1,7 @@
+# mixIndependR 0.4.1 -2020.11.26
+# Bug Fix
+- Fix the bug in "Description"
+
 # mixIndependR 0.4.1 -2020.11.24
 # Bug Fix
 - Fix the bug in "GenotypeFreq" when expect = FALSE

@@ -17,9 +17,6 @@ knitr::opts_chunk$set(
 )
 ```
 ```{r load, include = FALSE}
-install.packages("devtools")
-library(devtools)
-install_git("https://github.com/ice4prince/mixIndependR.git")
 library(mixIndependR)
 library(ggplot2)
 ```
@@ -49,7 +46,7 @@ ExpDist_X<-DistAlleleShare(e)
 df_K <- ComposPare_K(h,ExpDist_K,trans = F)
 df_X <- ComposPare_X(AS,ExpDist_X,trans = F)
 ```
-```{r echo=FALSE, r,fig.show='hold'}
+```{r echo=FALSE, fig.height=4, fig.show='hold', fig.width=7}
 
 ggplot(df_K,aes(x=freq))+
   geom_histogram(aes(y=..density..,color=OvE,fill=OvE),alpha=0.5,binwidth = 1,position = "identity")+

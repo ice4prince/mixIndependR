@@ -17,9 +17,6 @@ knitr::opts_chunk$set(
 ```
 
 ```{r load package,include = FALSE}
-install.packages("devtools")
-library(devtools)
-install_git("https://github.com/ice4prince/mixIndependR.git")
 library(mixIndependR)
 library(ggplot2)
 ```

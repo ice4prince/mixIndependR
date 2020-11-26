@@ -1,7 +1,7 @@
 Package: mixIndependR
 Type: Package
 Title: Genetics and Independence Testing of Mixed Genetic Panels
-Version: 0.4.1
+Version: 0.4.2
 Author: Bing Song
 Maintainer: Bing Song <bingsong@my.unthsc.edu>
 Depends: R (>= 3.6.0)

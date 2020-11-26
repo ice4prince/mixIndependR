@@ -16,7 +16,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r load package}
+```{r load package,include = FALSE}
+install.packages("devtools")
+library(devtools)
+install_git("https://github.com/ice4prince/mixIndependR.git")
 library(mixIndependR)
 library(ggplot2)
 ```
@@ -53,13 +56,13 @@ dfX2 <- data.frame(x=x,y=P1(x))
 ggplot(dfX2,aes(x=x,y=P1(x)))+
   geom_line()+
   geom_hline(yintercept = 0.95,color="Red")+
-  ggtitle("Cumulative Probability Funciton of Chi Squares for No. of Heterozygous Loci")+
+  ggtitle("CPF No. of Heterozygous Loci")+
   xlab("Chi-square")+ylab("1-p-value")
 
 dfX22 <- data.frame(x=x,y=P2(x))
 ggplot(dfX22,aes(x=x,y=P2(x)))+
   geom_line()+
   geom_hline(yintercept = 0.95,color="Red")+
-  ggtitle("Cumulative Probability Funciton of Chi Squares for No. of Shared Alleles")+
+  ggtitle("CPF No. of Shared Alleles")+
   xlab("Chi-square")+ylab("1-p-value")
 ```

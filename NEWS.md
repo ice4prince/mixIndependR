@@ -1,4 +1,4 @@
-# mixIndependR 0.4.1 -2020.11.26
+# mixIndependR 0.4.2 -2020.11.26
 # Bug Fix
 - Fix the bug in "Description"
 

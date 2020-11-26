@@ -18,7 +18,11 @@
 GenotypeFreq <- function(x,sep="\\|",expect = TRUE){
   p <-AlleleFreq(x,sep)
   Gt_a<-as.data.frame(cbind(rbind(rownames(p),rownames(p)),combn(rownames(p),2),combn(sort(rownames(p),decreasing = T),2)))
-  Gt<-as.vector(sapply(Gt_a,function(x){paste0(x[1],sep,x[2])}))
+  if (sep=="\\|"){
+    Gt<-as.vector(sapply(Gt_a,function(x){paste0(x[1],"|",x[2])}))
+  }else{
+    Gt<-as.vector(sapply(Gt_a,function(x){paste0(x[1],sep,x[2])}))
+  }
   if(expect){
     ho<-p*p
     p0<-data.frame(p)

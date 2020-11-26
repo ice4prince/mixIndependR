@@ -14,7 +14,7 @@ A dataframe with 2504 observations on 100 variables. This dataframe is the phase
 data(mixexample)
 }
 \description{
-This dataset is the phased genpotypes for a mix panel with 100 variants.
+This dataset is the phased genotypes for a mix panel with 100 variants.
 These variants are selected from the reference haplotype data of Gymrek's lab (see Reference).
 This is a sample with 2504 individuals.
 }

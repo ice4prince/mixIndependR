@@ -1,6 +1,6 @@
 #'Genotype Data from A Selected Mix Panel
 #'
-#'This dataset is the phased genpotypes for a mix panel with 100 variants.
+#'This dataset is the phased genotypes for a mix panel with 100 variants.
 #'These variants are selected from the reference haplotype data of Gymrek's lab (see Reference).
 #'This is a sample with 2504 individuals.
 #'

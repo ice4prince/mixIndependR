@@ -1,12 +1,13 @@
 # mixIndependR 0.4.2 -2020.11.26
 # Bug Fix
-- Fix the bug in "Description"
+- Fix the bugs about dependency and support in "Description".
+- Optimize the size of plots in vignettes.
 
 # mixIndependR 0.4.1 -2020.11.24
 # Bug Fix
 - Fix the bug in "GenotypeFreq" when expect = FALSE
 # Update Vignettes
-- Attach dataset and update the example. 
+- Attach dataset "mixexample" and update the example. 
 
 
 # mixIndependR 0.4.0 -2020.11.24

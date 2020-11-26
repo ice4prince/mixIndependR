@@ -14,7 +14,8 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggplot2
 NeedsCompilation: no
 Packaged: 2020-11-24 01:48:14 UTC; ice4prince
 VignetteBuilder: knitr

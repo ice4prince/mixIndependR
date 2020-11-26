@@ -1,3 +1,10 @@
+# mixIndependR 0.4.1 -2020.11.24
+# Bug Fix
+- Fix the bug in "GenotypeFreq" when expect = FALSE
+# Update Vignettes
+- Attach dataset and update the example. 
+
+
 # mixIndependR 0.4.0 -2020.11.24
 # Function Optimizing
 - Optimize most functions and replace loops with parallel calculation.

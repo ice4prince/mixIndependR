@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 ```{r load package}
 library(mixIndependR)
+library(ggplot2)
 ```
 
 ```{r preparation, include=FALSE}

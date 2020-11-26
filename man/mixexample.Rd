@@ -8,7 +8,7 @@
 A dataframe with 2504 observations on 100 variables. This dataframe is the phased genotype files for 100 variants (including SNPs and STRs) for 2504 individuals.
 }
 \source{
-\href{https://github.com/ice4prince/mixIndependR/tree/main/data}
+1000 Genomes SNP-STR Haplotype Panel <https://gymreklab.com/2018/03/05/snpstr_imputation.html>  The genotypes of panel after selection <https://github.com/ice4prince/mixIndependR/tree/main/data>
 }
 \usage{
 data(mixexample)
@@ -22,7 +22,6 @@ This is a sample with 2504 individuals.
 data(mixexample)
 }
 \references{
-Saini et al. (2018). Nat Commun 9(1): 4397.
-(\href{https://gymreklab.com/2018/03/05/snpstr_imputation.html})
+Saini et al. (2018). A reference haplotype panel for genome-wide imputation of short tandem repeats. Nat Commun 9(1): 4397. <https://pubmed.ncbi.nlm.nih.gov/30353011/>
 }
 \keyword{datasets}

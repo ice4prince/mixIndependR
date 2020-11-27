@@ -1,3 +1,5 @@
+# mixIndependR 0.4.3 -2020.11.26
+- Fix the bugs about exports of functions.
 # mixIndependR 0.4.2 -2020.11.26
 # Bug Fix
 - Fix the bugs about dependency and support in "Description".

@@ -25,7 +25,7 @@ mixIndependX <- function(x,sep="\\|",t,B){
   x2<-Dist_SimuChisq(s,prob,B)
   idx1 <-min(which(!obs==0))
   idx2 <- max(which(!obs==0))
-  x20 <-chisq.test(obs[idx1:idx2],p=prob[idx1:dix2]/sum(prob[idx1:dix2]),simulate.p.value = T,B=B)
+  x20 <-chisq.test(obs[idx1:idx2],p=prob[idx1:idx2]/sum(prob[idx1:idx2]),simulate.p.value = T,B=B)
   P <- ecdf(x2)
   return(1-P(x20$statistic))
 }

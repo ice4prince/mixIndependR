@@ -36,5 +36,7 @@ The dataset imported can be genotype data with sample ID in each row and the mar
 library(mixIndependR)
 ```
 
+## Citation
 
+[![DOI](https://zenodo.org/badge/315141861.svg)](https://zenodo.org/badge/latestdoi/315141861)
 

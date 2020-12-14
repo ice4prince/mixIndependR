@@ -23,15 +23,9 @@ mixIndependK<-function(x,sep="\\|",t,B){
   obs<-Obs_DistHetero$Freq
   s<-Simulate_DistK(H,ss,t)
   x2<-Dist_SimuChisq(s,Exp_DistHetero$Density,B)
-  idx <-which(prob==0)
-  if (length(idx)==0){
-    prob <- prob
-    obs <- obs
-  }else{
-    prob <- prob[-idx]
-    obs <- obs[-idx]
-  }
-  x20 <-chisq.test(obs,p=prob,simulate.p.value = T,B=B)
+  idx1 <-min(which(!obs==0))
+  idx2 <- max(which(!obs==0))
+  x20 <-chisq.test(obs[idx1:idx2],p=prob[idx1:idx2]/sum(prob[idx1:idx2]),simulate.p.value = T,B=B)
   P <- ecdf(x2)
   return(1-P(x20$statistic))
 }

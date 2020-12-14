@@ -9,10 +9,6 @@ vignette: >
 ---
 This vignette will introduce you to how the basic genetic parameters like the allele frequency, the genotype frequency and Hardy-Weinberg Equilibrium results are calculated with `mixIndependR`.
 
-## Data Import
-
-The dataset imported should be in a format of the genotype data with individuals in rows and markers in columns. Excel, csv and vcf file format are compatible.
-
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -22,60 +18,61 @@ knitr::opts_chunk$set(
 ```
 
 
-```{r, echo = FALSE}
-x <- data.frame(STR1=c("12|12","13|14","13|13","14|15","15|13","13|14","14|13","12|12","14|14","15|15"),SNP1=c("A|A","T|T","A|T","A|T","T|A","A|T","A|A","T|A","T|T","A|T"))
+```{r setup}
+```
 
-print(x)
+## Package Installation
+```{r load packages, include=FALSE}
+library(mixIndependR)
+```
+
+## Data Import
+
+The dataset imported should be in a format of the genotype data with individuals in rows and markers in columns. Excel, csv and vcf file format are compatible.
+
+`mixexample` is an attached data in this package, which is the genotypes of 2504 individuals on 100 unlined variants including 6 STRs and 94 SNPs.
+```{r import}
+x <- mixexample
 ```
 ## Basic Genetic Parameters
 
-```{r setup}
-library(mixIndependR)
-```
 `AlleleFreq` calculates the allele frequencies for one dataset.
 
-```{r}
-AlleleFreq(x,sep = "\\|")
+```{r allele freq, echo=TRUE}
+p <- AlleleFreq(x,sep = "\\|")
 ```
 `GenotypeFreq` calculates the observed or expected genotype frequency. If `expect=FALSE`, the observed genotype frequencies from the original dataset will be calculated. If `expected=TRUE`, the expected genotype probabilities from allele frequency table under Hardy-Weinberg Equilibrium will be exported.
 
-```{r}
-GenotypeFreq(x,sep = "\\|",expect = FALSE)  ####or GenotypeFreq(x)
-GenotypeFreq(x,sep = "\\|",expect = TRUE) ####or GenotypeFreq(x,expect =T)
+```{r genotype freq, echo=TRUE}
+G <- GenotypeFreq(x,sep = "\\|",expect = FALSE) 
+G0 <- GenotypeFreq(x,sep = "\\|",expect = TRUE) 
 ```
 `Heterozygous` test the heterozygosity of each individuals at each locus and output a table with `0` denoting homozygous and `1` heterozygous.
 
-```{r}
+```{r Heterozygosity, echo=TRUE}
 h <-Heterozygous(x,sep = "\\|") ####or Just use Heterozygous(x)
-print(h)
 ```
 `RxpHetero` calculate Real or Expected Average Heterozygosity at each locus. If `HWE=TRUE`, this function will calculate the expected heterozygosities under Hardy-Weinberg Equilibrium; If `HWE=FALSE`, this function will calculate the real average heterozygosities.
 
-```{r}
-p<-AlleleFreq(x,sep = "\\|")
+```{r Hetero Expect, echo=TRUE}
 H <- RxpHetero(h,p,HWE=TRUE)
-head(H)
 ```
-`AlleleShare` calculates the table of number of shared alleles for each pair of individuals at each locus.If `replacement=TRUE`, the pairs are formed with replicates; if `replacement=FALSE`, the pairs are formed without replicate.
+`AlleleShare` calculates the table of number of shared alleles for each pair of individuals at each locus.If `replacement=TRUE`, the pairs are formed with replacement; if `replacement=FALSE`, the pairs are formed without replacement. When the sample size is large, `replacement=F` is much faster.
 
-```{r}
-AS<-AlleleShare(x,sep = "\\|",replacement = FALSE) ###or without "sep="
-head(AS)
+```{r AS}
+AS<-AlleleShare(x,sep = "\\|",replacement = FALSE) 
 ```
 `RealProAlleleShare` and `ExpProAllelShare` calculate the average proportions and the expected probabilities of sharing 0,1 and 2 alleles at each locus.
 
 
-```{r}
+```{r Allele Share Expect, message=FALSE, warning=FALSE}
 e <-RealProAlleleShare(AS)
 e0<-ExpProAlleleShare(p)
-head(e)
-head(e0)
 ```
 
 `HWE_Chisq` test the Hardy-Weinberg Equilibrium with Pearson's Chi-square test. `B` is an integer specifying the number of replicates used in the Monte Carlo test.
 
-```{r}
-g <- GenotypeFreq(x,expect=FALSE)
-g0 <- GenotypeFreq(x,expect=TRUE)
-HWE.Chisq(g,g0,rescale.p = T,simulate.p.value = T,B=2000)
+```{r HWE}
+
+HWE_pvalue <-HWE.Chisq(G,G0,rescale.p = T,simulate.p.value = T,B=2000)
 ```

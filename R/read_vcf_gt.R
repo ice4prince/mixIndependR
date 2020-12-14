@@ -4,6 +4,7 @@
 #'@usage read_vcf_gt(x)
 #'@param x The vcf file with its directory
 #'@return a list contains the genotype and allele status.
+#'@export
 #'@examples
 #'\dontrun{
 #'df<-read_vcf_gt("~/x.vcf")

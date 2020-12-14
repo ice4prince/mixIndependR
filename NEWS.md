@@ -1,3 +1,19 @@
+# mixIndependR 0.4.3 -2020.11.29
+- Fix the bugs about exports of functions "read_vcf_gt" and "splitGenotypes".
+- Update the NAMESPACE file to including the missing functions.
+
+# mixIndependR 0.4.2 -2020.11.26
+# Bug Fix
+- Fix the bugs about dependency and support in "Description".
+- Optimize the size of plots in vignettes.
+
+# mixIndependR 0.4.1 -2020.11.24
+# Bug Fix
+- Fix the bug in "GenotypeFreq" when expect = FALSE
+# Update Vignettes
+- Attach dataset "mixexample" and update the example. 
+
+
 # mixIndependR 0.4.0 -2020.11.24
 # Function Optimizing
 - Optimize most functions and replace loops with parallel calculation.

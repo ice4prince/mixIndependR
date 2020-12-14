@@ -1,3 +1,6 @@
+# mixIndependR 0.4.4 -2021.01.07
+- add citation information and publication link
+
 # mixIndependR 0.4.3 -2020.11.29
 - Fix the bugs about exports of functions "read_vcf_gt" and "splitGenotypes".
 - Update the NAMESPACE file to including the missing functions.

@@ -1,7 +1,7 @@
 Package: mixIndependR
 Type: Package
 Title: Genetics and Independence Testing of Mixed Genetic Panels
-Version: 0.4.3
+Version: 0.4.4
 Author: Bing Song
 Maintainer: Bing Song <bingsong@my.unthsc.edu>
 Depends: R (>= 3.6.0)
@@ -19,3 +19,5 @@ Suggests:
 NeedsCompilation: no
 Packaged: 2020-11-24 01:48:14 UTC; ice4prince
 VignetteBuilder: knitr
+URL: https://github.com/ice4prince/mixIndependR
+Citation: mixIndependR citation info

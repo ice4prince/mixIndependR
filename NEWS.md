@@ -1,3 +1,7 @@
+# mixIndependR 1.0.0 -2021.03.16
+- updated "AlleleShare" and it is not compatible with odd sample size.
+- update the version number and maintainer's email address.
+
 # mixIndependR 0.4.4 -2021.01.07
 - add citation information and publication link
 

@@ -24,7 +24,7 @@ AlleleShare <- function(df,sep="\\|",replacement=FALSE){
     d1<-sample(n,n/2,replace = FALSE)
     d2<-sample(setdiff(c(1:n),d1))
     b1<-df[d1,]
-    b2<-df[d2,]
+    b2<-df[d2[1:(n/2)],]
   }
 
   a11<-matrix(sapply(strsplit(as.matrix(b1),sep),"[",1),nrow = nrow(b1),ncol=m,byrow = F)

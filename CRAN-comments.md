@@ -10,16 +10,9 @@
 
 ## R CMD check results
 
-
 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
 ## rhub check results  
 
-  Maintainer: 'Bing Song <bingsong@my.unthsc.edu>'
-  
-  Days since last update: 3
-
-0 errors ✓ | 0 warnings ✓ | 1 note x
-
-I appologize for the constant update. I was in a rush to submit revised manuscript to journal and failed to find the bugs on documentation of "read_vcf_gt" and "splitGenotypes". I forgot to export them to the NAMESPACE. Since they are not used in vignettes or examples, these bugs had been overlooked. But in real application, it matters. This update corrected this.
+Status: OK
 

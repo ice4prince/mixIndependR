@@ -14,5 +14,16 @@
 
 ## rhub check results  
 
-Status: OK
+"status":"ok""
+  
+## win_devel check:
+
+Status: 1 Note:
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Bing Song <bing.song@utsouthwestern.edu>'
+
+New maintainer:
+  Bing Song <bing.song@utsouthwestern.edu>
+Old maintainer(s):
+  Bing Song <bingsong@my.unthsc.edu>
 

@@ -14,7 +14,7 @@
 
 ## rhub check results  
 
-"status":"ok""
+"status":"ok"
   
 ## win_devel check:
 

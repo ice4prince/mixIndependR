@@ -10,6 +10,9 @@
 The goal of mixIndependR is to test the mutual independence of mixed
 genetic markers.
 
+# What's New:
+Bug fixed with the function `AlleleShare`
+
 ## Installation
 
 You can install the released version of mixIndependR from
